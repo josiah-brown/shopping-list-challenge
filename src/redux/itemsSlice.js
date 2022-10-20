@@ -7,7 +7,7 @@ import { createSlice } from "@reduxjs/toolkit";
 // reducer, and generates action type strings internally based on your reducer's names.
 const itemsSlice = createSlice({
   name: "items",
-  initialState: ["Tomatoes", "Apples", "Lettuce"],
+  initialState: [],
   reducers: {
     addItem: (state, action) => {
       state.push(action.payload);
