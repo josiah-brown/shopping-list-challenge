@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Shopping List Interview Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a simple shopping list web app capable of adding, editing, and deleting items.
+The project is built with redux but there is no backend so a refresh will reset all items.
+It was built according to a design mockup as part of a technical frontend interview challenge.
 
-## Available Scripts
+## Home Screen
+This is the place where all items are displayed.
+Each item contains a checkbox to mark an item as complete, an edit icon to make changes to the item, and a delete icon to remove the item from state.
 
-In the project directory, you can run:
+### Default Home Screen
+<p align=center>
+<kbd>
+<img src="https://user-images.githubusercontent.com/61333246/197109070-68ff12d5-88ba-472f-8f9c-c063a1f5cfc4.png" alt="default home screen" width="800"/>
+</kbd>
+</p>
 
-### `npm start`
+### Home Screen With Items
+<p align=center>
+<kbd>
+<img src="https://user-images.githubusercontent.com/61333246/197109592-d9a4a153-cc30-45be-9aaf-8f3ca1780229.png" alt="default home screen" width="800"/>
+</kbd>
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Add Items
+To add items, simply click the "Add Item" button on the home screen. The following form will appear:
+<p align=center>
+<kbd>
+<img src="https://user-images.githubusercontent.com/61333246/197109890-c4498338-b1ff-4958-9af1-ba2db81ce67a.png" alt="default home screen" width="800"/>
+</kbd>
+</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Make sure to fill out all of the fields. An error message will appear if you try to submit with empty inputs.
 
-### `npm test`
+## Edit Items
+To edit an item, simply click the associated pencil icon. The following form will appear pre-populated with the item data already stored in state. Note the "Purchased" checkbox on this form that allows the user to mark the item as purchased.
+<p align=center>
+<kbd>
+<img src="https://user-images.githubusercontent.com/61333246/197110196-dba7e7c7-1fd1-4d0d-9985-7bbbf6fd47eb.png" alt="default home screen" width="800"/>
+</kbd>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Delete Items
+To delete an item, click the associated trash can icon. A pop up dialog will appear making the user confirm the delete action.
+<p align=center>
+<kbd>
+<img src="https://user-images.githubusercontent.com/61333246/197110482-faab9658-8d3c-4b99-b15a-6fa554372d98.png" alt="default home screen" width="800"/>
+</kbd>
