@@ -12,10 +12,6 @@ import {
   FormGroup,
   FormControlLabel,
   Checkbox,
-  FormControl,
-  InputLabel,
-  Box,
-  Select,
 } from "@mui/material";
 
 // A general purpose form used for add or edit routes
