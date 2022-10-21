@@ -13,3 +13,22 @@
 .uncapitalize {
   text-transform: unset !important;
 }
+
+.spinner {
+  border: 3px solid #4d81b7;
+  border-left: 3px solid white;
+  margin: 124px auto 0;
+  border-radius: 50%;
+  width: 76px;
+  height: 76px;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
