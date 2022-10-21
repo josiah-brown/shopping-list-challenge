@@ -10,7 +10,7 @@ import {
   Checkbox,
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, editItem } from "../redux/itemsSlice";
+import { addItem, editItem } from "../../redux/itemsSlice";
 
 const MyForm = (props) => {
   const { type } = props;

@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Card, Checkbox, Typography } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { editItem, deleteItem } from "../../../../redux/itemsSlice";
-import ConfirmDialog from "../../../../components/ConfirmDialog";
+import { editItem, deleteItem } from "../../../redux/itemsSlice";
+import ConfirmDialog from "../../confirm_dialog/ConfirmDialog";
 
 const ListItem = ({ item }) => {
   const { name, description, purchased, _id } = item;

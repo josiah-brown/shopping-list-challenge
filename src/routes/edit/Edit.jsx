@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "../../components/nav/Nav";
 import { Box } from "@mui/material";
-import MyForm from "../../components/MyForm";
+import MyForm from "../../components/my_form/MyForm";
 import Home from "../home/Home";
 import { Link } from "react-router-dom";
 

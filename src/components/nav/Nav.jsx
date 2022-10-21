@@ -1,7 +1,7 @@
 import React from "react";
 import LastPageIcon from "@mui/icons-material/LastPage";
 import { Link } from "react-router-dom";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 const Nav = ({ theme }) => {
   return theme === "dark" ? (

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Nav from "../../components/nav/Nav";
 import Button from "@mui/material/Button";
-import ShoppingList from "./shopping_list/ShoppingList";
+import ShoppingList from "../../components/shopping_list/ShoppingList";
 import { Card, Typography } from "@mui/material";
 
 const Home = () => {
