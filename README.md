@@ -4,6 +4,25 @@ This project is a simple shopping list web app capable of adding, editing, and d
 The project is built with redux but there is no backend so a refresh will reset all items.
 It was built according to a design mockup as part of a technical frontend interview challenge.
 
+## Start the App
+To run the app on your local environment, first clone the git repository to your local machine using the following command:
+
+```git clone https://github.com/josiah-brown/shopping-list-challenge.git```
+
+Next, navigate into the project folder:
+
+```cd shopping-list-challenge```
+
+Install all npm packages by running:
+
+```npm install```
+
+Lastly run the program locally:
+
+```npm start```
+
+At this point, the web app should compile and launch in your default browser.
+
 ## Home Screen
 This is the place where all items are displayed.
 Each item contains a checkbox to mark an item as complete, an edit icon to make changes to the item, and a delete icon to remove the item from state.
