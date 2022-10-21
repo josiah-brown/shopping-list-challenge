@@ -2,33 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+* {
   font-family: "Nunito", sans-serif;
-  color: black;
 }
 
-nav {
+.dosis {
   font-family: "Dosis", sans-serif;
-}
-
-.c-primary {
-  color: #2a323c;
-}
-
-.c-secondary {
-  color: #5c6269;
-}
-
-.c-gray-3 {
-  color: #9ca8b4;
-}
-
-.c-border {
-  color: #d5dfe9;
-}
-
-.background-blue {
-  background: #4d81b7;
 }
 
 .uncapitalize {

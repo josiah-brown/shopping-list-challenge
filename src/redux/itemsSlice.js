@@ -10,13 +10,30 @@ const itemsSlice = createSlice({
   initialState: [],
   reducers: {
     addItem: (state, action) => {
-      state.push(action.payload);
+      state.push({
+        ...action.payload,
+        purchased: false,
+        _id: action.payload.name + new Date().getTime().toString(),
+      });
     },
     editItem: (state, action) => {
-      return state;
+      // The payload contains an item object
+      return state.map((item) => {
+        if (item._id === action.payload._id) {
+          return action.payload;
+        } else {
+          return item;
+        }
+      });
+    },
+    deleteItem: (state, action) => {
+      // The payload contains an item id
+      return state.filter((item) => {
+        return item._id !== action.payload;
+      });
     },
   },
 });
 
-export const { addItem, editItem } = itemsSlice.actions;
+export const { addItem, editItem, deleteItem } = itemsSlice.actions;
 export const itemsReducer = itemsSlice.reducer;
