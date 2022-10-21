@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 import ShoppingList from "../../components/shopping_list/ShoppingList";
 import { Card, Typography } from "@mui/material";
 
-const Home = () => {
+const Home = (props) => {
   const items = useSelector((state) => state.items);
 
   return (

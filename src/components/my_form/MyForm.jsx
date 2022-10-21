@@ -14,6 +14,7 @@ import { addItem, editItem } from "../../redux/itemsSlice";
 
 const MyForm = (props) => {
   const { type } = props;
+  const testData = props?.testData;
 
   // Allows form to dispatch actions to redux store
   const dispatch = useDispatch();
@@ -26,11 +27,13 @@ const MyForm = (props) => {
 
   // Store state for the item input field
   const [itemState, setItemState] = useState(() => {
-    return type === "add"
-      ? { name: "", description: "", qty: 1 }
-      : items.filter((item) => {
-          return item._id === currId;
-        })[0];
+    return !testData
+      ? type === "add"
+        ? { name: "", description: "", qty: 1 }
+        : items.filter((item) => {
+            return item._id === currId;
+          })[0]
+      : testData;
   });
 
   const [errors, setErrors] = useState({
