@@ -12,6 +12,10 @@ import {
   FormGroup,
   FormControlLabel,
   Checkbox,
+  FormControl,
+  InputLabel,
+  Box,
+  Select,
 } from "@mui/material";
 
 // A general purpose form used for add or edit routes
@@ -136,6 +140,19 @@ const MyForm = (props) => {
         value={itemState.name}
         onChange={handleChange}
         fullWidth
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "& > fieldset": {
+              borderColor: "primary.gray4",
+            },
+          },
+          "& .MuiInputBase-root": {
+            color: "primary.gray3",
+          },
+          "& .MuiFormLabel-root": {
+            color: "primary.gray3",
+          },
+        }}
       />
       <TextField
         error={errors.descriptionError ? true : false}
@@ -149,7 +166,19 @@ const MyForm = (props) => {
         multiline
         fullWidth
         inputProps={{ maxLength: 100 }}
-        sx={{ position: "relative" }}
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "& > fieldset": {
+              borderColor: "primary.gray4",
+            },
+          },
+          "& .MuiInputBase-root": {
+            color: "primary.gray3",
+          },
+          "& .MuiFormLabel-root": {
+            color: "primary.gray3",
+          },
+        }}
       />
 
       <Typography
@@ -166,6 +195,19 @@ const MyForm = (props) => {
         onChange={handleQtyChange}
         fullWidth
         select
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            "& > fieldset": {
+              borderColor: "primary.gray4",
+            },
+          },
+          "& .MuiInputBase-root": {
+            color: "primary.gray3",
+          },
+          "& .MuiFormLabel-root": {
+            color: "primary.gray3",
+          },
+        }}
       >
         <MenuItem value={1}>1</MenuItem>
         <MenuItem value={2}>2</MenuItem>
@@ -179,9 +221,15 @@ const MyForm = (props) => {
               <Checkbox
                 checked={itemState.purchased}
                 onChange={handleCheckboxChange}
+                sx={{
+                  color: "#c6c6c6",
+                  "&.Mui-checked": {
+                    color: "#4D81B7",
+                  },
+                }}
               />
             }
-            label="Purchased"
+            label={<Typography color={"primary.gray3"}>Purchased</Typography>}
           />
         </FormGroup>
       ) : null}
@@ -196,6 +244,7 @@ const MyForm = (props) => {
           {type === "add" ? "Add Task" : "Save Item"}
         </Button>
       </div>
+      <div className="absolute left-0 bottom-0 w-full h-[5px] bg-[#4D81B7]"></div>
     </form>
   );
 };

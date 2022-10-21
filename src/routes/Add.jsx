@@ -20,7 +20,6 @@ const Add = () => {
       <Box className="w-[568px] h-screen absolute top-0 right-0 bg-white z-50">
         <Nav theme="light" />
         <MyForm type="add" />
-        <div className="absolute left-0 bottom-0 w-full h-[5px] background-blue"></div>
       </Box>
     </Box>
   );

@@ -17,8 +17,8 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
-  }, []);
+    }, 500);
+  }, [items]);
 
   // If there are items in state, render the ShoppingList
   // Otherwise, render a default CTA card
