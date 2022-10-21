@@ -1,12 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./routes/home/Home";
-import Add from "./routes/add/Add";
-import Edit from "./routes/edit/Edit";
 import { Provider } from "react-redux";
-import store from "./redux/store";
 import { ThemeProvider } from "@mui/material";
+
+import store from "./redux/store";
 import { theme } from "./theme";
+
+import Home from "./routes/Home";
+import Add from "./routes/Add";
+import Edit from "./routes/Edit";
 
 const App = () => {
   return (

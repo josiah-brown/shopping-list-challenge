@@ -3,7 +3,7 @@ import { itemsReducer } from "./itemsSlice";
 
 // Create the redux store
 // configureStore() automatically passes all slice reducers to combineReducers().
-// redux-thunk middleware is also automatically added.
+// some default middleware is also automatically added.
 const store = configureStore({
   reducer: {
     items: itemsReducer,

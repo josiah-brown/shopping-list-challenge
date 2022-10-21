@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
+import { addItem, editItem } from "../../redux/itemsSlice";
+
 import {
   Typography,
   TextField,
@@ -9,19 +13,26 @@ import {
   FormControlLabel,
   Checkbox,
 } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
-import { addItem, editItem } from "../../redux/itemsSlice";
 
+// A general purpose form used for add or edit routes
 const MyForm = (props) => {
+  // Destructure the type prop.
+  // This is used to conditionally render the edit or add form
   const { type } = props;
+
+  // Used for testing only
   const testData = props?.testData;
 
   // Allows form to dispatch actions to redux store
   const dispatch = useDispatch();
+
+  // Get hold of the items array in state
   const items = useSelector((state) => state.items);
 
-  // Used to navigate back to the list after item submit
+  // Used to navigate back to the home after item submit or click away
   const navigate = useNavigate();
+
+  // Get id of specific item for edit page
   const params = useParams();
   const currId = params?.id;
 
@@ -36,14 +47,17 @@ const MyForm = (props) => {
       : testData;
   });
 
+  // Store error states for relevant form fields
   const [errors, setErrors] = useState({
     nameError: "",
     descriptionError: "",
-    qtyError: "",
   });
 
+  // Called when the user submits the form
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Make sure the item has a name
     if (!itemState.name.length > 0) {
       setErrors((prev) => {
         return { ...prev, nameError: "Item name is required." };
@@ -51,6 +65,7 @@ const MyForm = (props) => {
       return;
     }
 
+    // Require the description field
     if (!itemState.description.length > 0) {
       setErrors((prev) => {
         return { ...prev, descriptionError: "Description is required." };
@@ -58,17 +73,17 @@ const MyForm = (props) => {
       return;
     }
 
+    // Dispatch actions based on type of form
     if (type === "add") {
       dispatch(addItem(itemState));
       navigate("/");
-    }
-
-    if (type === "edit") {
+    } else if (type === "edit") {
       dispatch(editItem(itemState));
       navigate("/");
     }
   };
 
+  // Update name and desc state and errors on input change
   const handleChange = (e) => {
     const { id, value } = e.target;
     setItemState((prevState) => {
@@ -79,6 +94,7 @@ const MyForm = (props) => {
     });
   };
 
+  // Handle change to item quantity select input
   const handleQtyChange = (e) => {
     const { name, value } = e.target;
     setItemState((prevState) => {
@@ -86,12 +102,14 @@ const MyForm = (props) => {
     });
   };
 
+  // Toggle purchased state on checkbox click
   const handleCheckboxChange = () => {
     setItemState((prev) => {
       return { ...prev, purchased: !prev.purchased };
     });
   };
 
+  // Render the form
   return (
     <form
       action="submit"

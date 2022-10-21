@@ -1,5 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
+// Adds a custom theme on top of the default mui theme
 export const theme = createTheme({
   palette: {
     primary: {

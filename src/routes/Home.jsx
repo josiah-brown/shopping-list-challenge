@@ -1,14 +1,17 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Nav from "../../components/nav/Nav";
-import Button from "@mui/material/Button";
-import ShoppingList from "../../components/shopping_list/ShoppingList";
-import { Card, Typography } from "@mui/material";
 
-const Home = (props) => {
+import Nav from "../components/nav/Nav";
+import ShoppingList from "../components/shopping_list/ShoppingList";
+import { Card, Typography, Button } from "@mui/material";
+
+const Home = () => {
+  // Get hold of the global redux items array
   const items = useSelector((state) => state.items);
 
+  // If there are items in state, render the ShoppingList
+  // Otherwise, render a default CTA card
   return (
     <div>
       <Nav theme={"dark"} />

@@ -1,12 +1,18 @@
-import { Button, Container, Stack, Box, Typography } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+
+import { Button, Container, Stack, Box, Typography } from "@mui/material";
 import ListItem from "./list_item/ListItem";
 
+// Renders the shopping list stored in state.
 const ShoppingList = (props) => {
+  // Get items from state
   const items = useSelector((state) => state.items);
+
+  // Data passed in solely for testing
   const testData = props?.testData;
+
   return (
     <Container>
       <Box mt={4} mb={2} className="flex justify-between items-center">
@@ -18,6 +24,7 @@ const ShoppingList = (props) => {
         >
           Your Items
         </Typography>
+
         <Button
           variant="contained"
           disableElevation
@@ -29,6 +36,7 @@ const ShoppingList = (props) => {
           <Link to={"/add"}>Add Item</Link>
         </Button>
       </Box>
+
       <Stack spacing={2}>
         {!testData
           ? items.map((item, index) => {

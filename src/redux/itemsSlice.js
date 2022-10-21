@@ -9,6 +9,7 @@ const itemsSlice = createSlice({
   name: "items",
   initialState: [],
   reducers: {
+    // Simply push a new item object to the items array
     addItem: (state, action) => {
       state.push({
         ...action.payload,
@@ -16,6 +17,7 @@ const itemsSlice = createSlice({
         _id: action.payload.name + new Date().getTime().toString(),
       });
     },
+    // Find item with matching id and replace with the payload
     editItem: (state, action) => {
       // The payload contains an item object
       return state.map((item) => {
@@ -26,6 +28,7 @@ const itemsSlice = createSlice({
         }
       });
     },
+    // find item with matching id and remove from state
     deleteItem: (state, action) => {
       // The payload contains an item id
       return state.filter((item) => {

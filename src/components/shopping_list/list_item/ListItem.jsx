@@ -1,28 +1,39 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import { editItem, deleteItem } from "../../../redux/itemsSlice";
+
 import { Card, Checkbox, Typography } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { editItem, deleteItem } from "../../../redux/itemsSlice";
 import ConfirmDialog from "../../confirm_dialog/ConfirmDialog";
 
+// Render a single list item
 const ListItem = ({ item }) => {
+  // Destructure the item passed in via props
   const { name, description, purchased, _id } = item;
 
+  // Set default state of confirm delete dialog
   const [confirmDialog, setConfirmDialog] = useState({
     isOpen: false,
     title: "",
     subTitle: "",
   });
+
+  // Used to dispatch actions to reducer
   const dispatch = useDispatch();
 
+  // Called when the checkbox is toggled.
+  // Updated the "purchased" state of the given item
   const handleCheckboxChange = () => {
     const newVal = !purchased;
     const updatedItem = { ...item, purchased: newVal };
     dispatch(editItem(updatedItem));
   };
 
+  // Called when the user clicks on the delete button.
+  // Displays a dialog to confirm delete action.
   const showDialog = (e) => {
     e.preventDefault();
     setConfirmDialog({
@@ -33,10 +44,12 @@ const ListItem = ({ item }) => {
     });
   };
 
+  // Called only if the user confirms the delete action in the popup dialog
   const handleDelete = () => {
     dispatch(deleteItem(_id));
   };
 
+  // Render the item
   return (
     <Card
       variant="outlined"

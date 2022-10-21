@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   Dialog,
   DialogTitle,
@@ -8,15 +9,19 @@ import {
   Button,
 } from "@mui/material";
 
+// A general purpose dialog box component
 const ConfirmDialog = (props) => {
+  // Destructure props
   const { confirmDialog, setConfirmDialog, action } = props;
 
+  // Close the dialog on cancel or click away
   const handleClose = () => {
     setConfirmDialog((prev) => {
       return { ...prev, isOpen: false };
     });
   };
 
+  // Render dialog box
   return (
     <Dialog open={confirmDialog.isOpen} onClose={handleClose}>
       <DialogTitle sx={{ fontSize: "18px" }}>{confirmDialog.title}</DialogTitle>

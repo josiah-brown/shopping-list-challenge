@@ -1,8 +1,11 @@
 import React from "react";
-import LastPageIcon from "@mui/icons-material/LastPage";
 import { Link } from "react-router-dom";
+
+import LastPageIcon from "@mui/icons-material/LastPage";
 import { Box } from "@mui/material";
 
+// A conditionally rendered nav component
+// Only allows for "light" or "dark" options
 const Nav = ({ theme }) => {
   return theme === "dark" ? (
     <Box
